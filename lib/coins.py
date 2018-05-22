@@ -1211,6 +1211,52 @@ class MonacoinTestnet(Monacoin):
         'electrumx1.testnet.monacoin.nl s t',
     ]
 
+class Dongri(Coin):
+    NAME = "Dongri"
+    SHORTNAME = "DNGR"
+    NET = "mainnet"
+    XPUB_VERBYTES = bytes.fromhex("0488B21E")
+    XPRV_VERBYTES = bytes.fromhex("0488ADE4")
+    P2PKH_VERBYTE = bytes.fromhex("1F")
+    P2SH_VERBYTES = [bytes.fromhex("1D"), bytes.fromhex("05")]
+    WIF_BYTE = bytes.fromhex("B0")
+    GENESIS_HASH = ('039bcb0e9c9540be6dc0e62b9eb6dfa8'
+                    '38293a78d16f097b86415e4a932e90ec')
+    DESERIALIZER = lib_tx.DeserializerSegWit
+    TX_COUNT = 20
+    TX_COUNT_HEIGHT = 20
+    TX_PER_BLOCK = 1
+    RPC_PORT = 9402
+    REORG_LIMIT = 1000
+    PEERS = [
+        'electrumx1.dongriproject.com s t',
+        'electrumx2.dongriproject.com s t',
+    ]
+
+
+class DongriTest(Coin):
+    NAME = "DongriTest"
+    SHORTNAME = "tDNGR"
+    NET = "testnet"
+    XPUB_VERBYTES = bytes.fromhex("043587CF")
+    XPRV_VERBYTES = bytes.fromhex("04358394")
+    P2PKH_VERBYTE = bytes.fromhex("6F")
+    P2SH_VERBYTES = [bytes.fromhex("75"), bytes.fromhex("C4")]
+    WIF_BYTE = bytes.fromhex("EF")
+    GENESIS_HASH = ('4266cec485430edefb5260465358b44b'
+                    '023fdf5717a523ba07615e4da9f1d80b')
+    DESERIALIZER = lib_tx.DeserializerSegWit
+    TX_COUNT = 1
+    TX_COUNT_HEIGHT = 1
+    TX_PER_BLOCK = 1
+    RPC_PORT = 19402
+    REORG_LIMIT = 1000
+    PEER_DEFAULT_PORTS = {'t': '51001', 's': '51002'}
+    PEERS = [
+        'electrumx1test.dongriproject.com s t',
+        'electrumx2test.dongriproject.com s t',
+    ]
+
 
 class Crown(AuxPowMixin, Coin):
     NAME = "Crown"
