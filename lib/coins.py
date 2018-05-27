@@ -1218,7 +1218,7 @@ class Dongri(Coin):
     XPUB_VERBYTES = bytes.fromhex("0488B21E")
     XPRV_VERBYTES = bytes.fromhex("0488ADE4")
     P2PKH_VERBYTE = bytes.fromhex("1F")
-    P2SH_VERBYTES = [bytes.fromhex("1D"), bytes.fromhex("05")]
+    P2SH_VERBYTES = [bytes.fromhex("5A"), bytes.fromhex("05")]
     WIF_BYTE = bytes.fromhex("B0")
     GENESIS_HASH = ('039bcb0e9c9540be6dc0e62b9eb6dfa8'
                     '38293a78d16f097b86415e4a932e90ec')
